@@ -49,8 +49,11 @@ const Hero = () => {
           />
 
           <div className="flex justify-center gap-4">
+            <a href = 'https://www.linkedin.com/in/elsabeth-adugna-462077171/' target="_blank" >
+            
             <FaLinkedinIn className="hover:cursor-pointer size-5" />
-            <FaTelegram className="hover:cursor-pointer size-5" />
+            </a >
+{/*             <FaTelegram className="hover:cursor-pointer size-5" /> */}
           </div>
         </div>
       </div>
