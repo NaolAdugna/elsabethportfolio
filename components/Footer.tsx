@@ -88,10 +88,13 @@ const Footer = () => {
 
           <div className="flex items-center md:gap-3 gap-6">
             <div className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
-              <FaTelegram width={20} height={20} />
+{/*               <FaTelegram width={20} height={20} /> */}
             </div>
             <div className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
+              <a hre='https://www.linkedin.com/in/elsabeth-adugna-462077171/' target='_blank' >
               <FaLinkedinIn width={20} height={20} />
+              
+              </a>
             </div>
           </div>
         </div>
