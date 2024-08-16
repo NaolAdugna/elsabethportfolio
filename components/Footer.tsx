@@ -7,7 +7,8 @@ import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import { FaEnvelope } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
-const Footer = () => {  
+import { Toaster, toast } from "react-hot-toast";
+const Footer: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -18,9 +19,9 @@ const Footer = () => {
       emailjs
         .sendForm(
           "service_wzosavu",
-          "template_Kz8gxzi",
+          "template_kz8gxzi",
           form.current,
-          "rE3GNKkSjzRwhugdS"
+          "rE3GNKkSJzRwhugdS"
         )
         .then(
           () => {
@@ -43,19 +44,22 @@ const Footer = () => {
         
         </div>
         <div className="flex flex-col items-center">
+          <Toaster position="top-center" reverseOrder={false} />
           <h1 className="heading lg:max-w-[45vw]">
             Contact <span className="text-purple">Me</span>
           </h1>
           <p className="text-white-200 md:mt-10 mb-5 text-center">
             Reach out to me today and let&apos;s discuss how I can help you.
           </p>
-          <form className=" flex flex-col items-start gap-3 justify-between w-1/2">
+          <form
+            ref={form}
+            onSubmit={sendEmail} className=" flex flex-col items-start gap-3 justify-between w-1/2">
             {/* <Toaster position="top-center" reverseOrder={false}></Toaster> */}
             <label>Names</label>
             <input
               type="text"
               placeholder="Your Name"
-              name="name"
+              name="from_name"
               required
               className="text-[16px] rounded-lg border-4 w-full  text-white-100 px-3 py-2 bg-gray-900"
               // {...formik.getFieldProps("name")}
@@ -66,7 +70,7 @@ const Footer = () => {
               placeholder="Your Email"
               required
               className="text-[16px] rounded-lg w-full border-4 text-white-100 px-3 py-2 bg-gray-900"
-              name="email"
+              name="from_email"
               // {...formik.getFieldProps("email")}
             />
             <label>Message</label>
@@ -80,11 +84,15 @@ const Footer = () => {
               rows={5}
               // {...formik.getFieldProps("message")}
             />
-            <MagicButton
-              title="Send Message"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
+       
+            <button type="submit">
+              {" "}
+              <MagicButton
+                title="Send Message"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </button>
           
           </form>
          
